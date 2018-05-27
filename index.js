@@ -24,7 +24,7 @@ function getDataFromApi(searchTerm, callback) {
 function renderResult(result) {
 	return `
 		<div>
-			<img src="${result.snippet.thumbnails.default.url}">
+			<img src="${result.snippet.thumbnails.medium.url}">
 		</div>
 		`;
 }
@@ -32,6 +32,7 @@ function renderResult(result) {
 function displayYouTubeSearchData(data) {
 	const results = data.items.map((item, index) =>
 		renderResult(item));
+	console.log(data);
 	$('.js-search-results').html(results);
 }
 
@@ -47,3 +48,7 @@ function watchSubmit() {
 }
 
 $(watchSubmit);
+
+$(".js-search-results").click(function() {
+	console.log('clicked!');
+});
