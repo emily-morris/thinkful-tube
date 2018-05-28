@@ -24,7 +24,7 @@ function getDataFromApi(searchTerm, callback) {
 function renderResult(result) {
 	return `
 		<div>
-			<img src="${result.snippet.thumbnails.medium.url}">
+			<a class="js-result-name" href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank"><img src="${result.snippet.thumbnails.medium.url}"></a>
 		</div>
 		`;
 }
@@ -32,7 +32,7 @@ function renderResult(result) {
 function displayYouTubeSearchData(data) {
 	const results = data.items.map((item, index) =>
 		renderResult(item));
-	console.log(data);
+	console.log(data.items[0]);
 	$('.js-search-results').html(results);
 }
 
