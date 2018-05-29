@@ -23,11 +23,13 @@ function getDataFromApi(searchTerm, callback) {
 
 function renderResult(result) {
 	return `
-		<div>
-			<a class="js-result-name" href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank"><img src="${result.snippet.thumbnails.medium.url}"></a>
+		<div class="lightbox-trigger">
+			<img src="${result.snippet.thumbnails.medium.url}">
 		</div>
 		`;
 }
+
+// <a class="js-result-name" href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank"><img src="${result.snippet.thumbnails.medium.url}"></a>
 
 function displayYouTubeSearchData(data) {
 	const results = data.items.map((item, index) =>
@@ -49,6 +51,8 @@ function watchSubmit() {
 
 $(watchSubmit);
 
-$(".js-search-results").click(function() {
-	console.log('clicked!');
+$(".js-search-results").on("click", ".lightbox-trigger",function() {
+	console.log($(this));
+	event.preventDefault();
+	let imageHref = 
 });
