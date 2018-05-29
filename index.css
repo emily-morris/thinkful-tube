@@ -13,10 +13,9 @@ body {
 }
 
 #lightbox p {
-    text-align: right; 
+    text-align: center; 
     color: #fff; 
-    margin-right: 20px; 
-    font-size: 12px; 
+    font-size: 30px; 
 }
 
 #lightbox img {
