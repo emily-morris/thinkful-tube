@@ -8,7 +8,7 @@ function getDataFromApi(searchTerm, callback) {
 		//type and structure of data
 		part: 'snippet',
 		//api key authorizes to get data
-		key: 'AIzaSyC3CvFT1jpGyiMXTEtXlX6Kn2z02NwIycU',
+		key: 'API key',
 		//query
 		q: searchTerm
 		//id of page of results
